@@ -1,18 +1,22 @@
-package hello.hellospring.repository.service;
+package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 //컨트롤 + 쉬프트 + T로 테스트 클래스 생성 가능
+//@Service(애노테이션을 이용해 스프링 빈 등록)
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
     //의존성주입(DI : Dependency Injection)
     //직접 리포지토리를 생성하는 것이 아니라 외부에서 받아옴.
+    //@Autowired//MemberRepository를 연결시켜 줌
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
