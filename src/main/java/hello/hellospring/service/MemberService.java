@@ -4,12 +4,14 @@ import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 //컨트롤 + 쉬프트 + T로 테스트 클래스 생성 가능
 //@Service(애노테이션을 이용해 스프링 빈 등록)
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
